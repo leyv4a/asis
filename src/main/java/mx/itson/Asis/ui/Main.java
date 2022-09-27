@@ -250,9 +250,12 @@ public class Main extends javax.swing.JFrame {
 
             String fechaNacimiento = operacion.fechaNacimiento(ano);
 
+            String valorUno = operacion.valorUno();
+
             lblResultado.setText(primerApellido2.concat(segundoApellido2)
                     .concat(nombre2).concat(ano2).concat(mes).concat(dia)
-                    .concat(genero2).concat(entidadFederativa2).concat(consonantePrimera).concat(consonanteSegunda).concat(consonanteInterna).concat(fechaNacimiento).concat(valorUno).toUpperCase());
+                    .concat(genero2).concat(entidadFederativa2).concat(consonantePrimera).
+                    concat(consonanteSegunda).concat(consonanteInterna).concat(fechaNacimiento).concat(valorUno).toUpperCase());
         } catch (Exception e) {
             lblResultado.setText("REVISE LOS DATOS PROPORCIONADOS");
         }

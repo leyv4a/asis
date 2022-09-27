@@ -230,7 +230,7 @@ public class Operacion {
 
     public String consonanteInterna(String consonanteInterna) {
         String consonanteInterna2 = "";
-        consonanteInterna2 = consonanteInterna.toLowerCase().replaceAll("[aeiou]", "").substring(1, 2);
+        consonanteInterna2 = consonanteInterna.toLowerCase().replaceAll("[aeiou]", "").substring(0, 1);
 
         return consonanteInterna2;
 
@@ -247,7 +247,7 @@ public class Operacion {
 
         return fechaNacimiento3;
     }
-    public String valorUno (String valorUno){
+    public String valorUno (){
     String uno = "1";
     return uno;
     }
