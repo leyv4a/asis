@@ -58,8 +58,8 @@ public class Operacion {
         String nombre2 = "";
         if (nombre.contains(" ")) {
             String[] nombreSplit = nombre.split(" ");
-            if (nombreSplit[0].equals("Jose")) {
-                
+            if (nombreSplit[0].equals("jose") || nombreSplit[0].equals("maria")) {
+            nombre2 = nombreSplit[1].substring(0,1);
             }
 
         } else {
