@@ -53,10 +53,14 @@ public class Operacion {
      * @return String procesada mediante los elemtentos que componen la CURP
      */
     public String nombre(String nombre) {
+        
+        nombre = nombre.replaceAll("[áéíóú]", "[aeiou]" ).toLowerCase();
         String nombre2 = "";
         if (nombre.contains(" ")) {
-            String[] nombre3 = nombre.split(" ");
-            nombre2 = nombre3[1].substring(0, 1);
+            String[] nombreSplit = nombre.split(" ");
+            if (nombreSplit[0].equals("Jose")) {
+                
+            }
 
         } else {
             nombre2 = nombre.toLowerCase().substring(0, 1);
