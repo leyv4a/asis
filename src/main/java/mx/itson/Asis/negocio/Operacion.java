@@ -222,7 +222,7 @@ public class Operacion {
         if (consonanteSegunda.isEmpty()) {
             consonanteSegunda2 = "X";
         } else {
-            consonanteSegunda2 = consonanteSegunda.toLowerCase().replaceAll("[aeiou]", "").substring(0, 1); //error
+            consonanteSegunda2 = consonanteSegunda.toLowerCase().replaceAll("[aeiou]", "").substring(1, 2); //error
         }
 
         return consonanteSegunda2;
@@ -247,5 +247,10 @@ public class Operacion {
 
         return fechaNacimiento3;
     }
+    public String valorUno (String valorUno){
+    String uno = "1";
+    return uno;
+    }
+    
 
 }
