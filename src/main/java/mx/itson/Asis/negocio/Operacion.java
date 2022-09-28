@@ -53,20 +53,20 @@ public class Operacion {
      * @return String procesada mediante los elemtentos que componen la CURP
      */
     public String nombre(String nombre) {
-        
-        nombre = nombre.replaceAll("[áéíóú]", "[aeiou]" ).toLowerCase();
-        String nombre2 = "";
+ 
+        String nombreDos= nombre.toLowerCase().replace("á","a").replace("é", "e").replace("í", "i").replace("ó","o").replace("ú","u");
+        String nombreFinal = "";
         if (nombre.contains(" ")) {
-            String[] nombreSplit = nombre.split(" ");
+            String[] nombreSplit = nombreDos.split(" ");
             if (nombreSplit[0].equals("jose") || nombreSplit[0].equals("maria")) {
-            nombre2 = nombreSplit[1].substring(0,1);
+            nombreFinal = nombreSplit[1].substring(0,1);
             }
 
         } else {
-            nombre2 = nombre.toLowerCase().substring(0, 1);
+            nombreFinal = nombre.toLowerCase().substring(0, 1);
         }
 
-        return nombre2;
+        return nombreFinal;
     }
 
     /**
