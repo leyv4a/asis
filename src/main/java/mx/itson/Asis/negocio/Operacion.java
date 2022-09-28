@@ -230,7 +230,25 @@ public class Operacion {
 
     public String consonanteInterna(String consonanteInterna) {
         String consonanteInterna2 = "";
+        String[] vocal = {"A","E", "I","O" ,"U" ,"a", "e", "i", "o","u"};
+        
+        if (true) {
+            for (int i = 0; i < vocal.length; i++) {
+              if (!consonanteInterna.startsWith(vocal[i])) {  
+                 consonanteInterna2 = consonanteInterna.toLowerCase().replaceAll("[aeiou]", "").substring(1, 2); 
+                  
+            }else{
+              consonanteInterna2 = consonanteInterna.toLowerCase().replaceAll("[aeiou]", "").substring(0, 1);
+              }
+              
+            }
+        
+            
+        }else{
+        
         consonanteInterna2 = consonanteInterna.toLowerCase().replaceAll("[aeiou]", "").substring(0, 1);
+        }
+        
 
         return consonanteInterna2;
 
