@@ -4,6 +4,7 @@
  */
 package mx.itson.Asis.ui;
 
+import javax.swing.JOptionPane;
 import mx.itson.Asis.negocio.Operacion;
 
 /**
@@ -54,6 +55,8 @@ public class Main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -120,6 +123,8 @@ public class Main extends javax.swing.JFrame {
 
         jLabel9.setText("Apellido Materno");
 
+        lblResultado.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setText("CURP");
 
@@ -135,45 +140,43 @@ public class Main extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(73, 73, 73)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel1)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(lblResultado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel8)
+                                        .addComponent(jLabel9)
+                                        .addComponent(txtApellido1)
+                                        .addComponent(txtNombre)
+                                        .addComponent(txtApellido2, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
+                                    .addGap(183, 183, 183)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(cbxEntidad, 0, 1, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel2)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jLabel3)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                            .addComponent(jLabel4))
+                                        .addComponent(jLabel5)
+                                        .addComponent(jLabel6)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(txtDia, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(8, 8, 8)
+                                            .addComponent(txtMes, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(txtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(cbxSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addComponent(jButton1))
+                            .addGap(44, 44, 44)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel1)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(lblResultado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jLabel8)
-                                                .addComponent(jLabel9)
-                                                .addComponent(txtApellido1)
-                                                .addComponent(txtNombre)
-                                                .addComponent(txtApellido2, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE))
-                                            .addGap(183, 183, 183)
-                                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(cbxEntidad, 0, 1, Short.MAX_VALUE)
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(jLabel2)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jLabel3)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jLabel4))
-                                                .addComponent(jLabel5)
-                                                .addComponent(jLabel6)
-                                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(txtDia, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGap(8, 8, 8)
-                                                    .addComponent(txtMes, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(txtAno, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addComponent(cbxSexo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                        .addComponent(jButton1))
-                                    .addGap(44, 44, 44)))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(255, 255, 255)
+                        .addGap(19, 19, 19)
                         .addComponent(jLabel10)))
                 .addGap(100, 100, 100))
         );
@@ -272,7 +275,7 @@ public class Main extends javax.swing.JFrame {
 
             lblResultado.setText(concatenar);
         } catch (Exception e) {
-            lblResultado.setText("REVISE LOS DATOS PROPORCIONADOS");
+            JOptionPane.showMessageDialog(rootPane, "Revise los datos ingresados","Alerta",JOptionPane.ERROR_MESSAGE);
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -282,6 +285,7 @@ public class Main extends javax.swing.JFrame {
         Operacion operacion = new Operacion();
         if (operacion.validarLetras(validar) == true) {
             evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Revise los datos ingresados","Alerta",JOptionPane.ERROR_MESSAGE);
         }
         if (txtAno.getText().length() >= 4) {
             evt.consume();
@@ -293,6 +297,7 @@ public class Main extends javax.swing.JFrame {
         Operacion operacion = new Operacion();
         if (operacion.validarLetras(validar) == true) {
             evt.consume();
+            JOptionPane.showMessageDialog(rootPane, "Revise los datos ingresados","Alerta",JOptionPane.ERROR_MESSAGE);
         }
         if (txtMes.getText().length() >= 2) {
             evt.consume();
@@ -305,6 +310,8 @@ public class Main extends javax.swing.JFrame {
         Operacion operacion = new Operacion();
         if (operacion.validarLetras(validar) == true) {
             evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "Revise los datos ingresados","Alerta",JOptionPane.ERROR_MESSAGE);
         }
         if (txtDia.getText().length() >= 2) {
             evt.consume();
@@ -317,6 +324,8 @@ public class Main extends javax.swing.JFrame {
         Operacion operacion = new Operacion();
         if (operacion.validarNumeros(validar) == true) {
             evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "Revise los datos ingresados","Alerta",JOptionPane.ERROR_MESSAGE);
         }
 
 
@@ -327,6 +336,8 @@ public class Main extends javax.swing.JFrame {
         Operacion operacion = new Operacion();
         if (operacion.validarNumeros(validar) == true) {
             evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "Revise los datos ingresados","Alerta",JOptionPane.ERROR_MESSAGE);
         }
 
 
@@ -337,6 +348,8 @@ public class Main extends javax.swing.JFrame {
         Operacion operacion = new Operacion();
         if (operacion.validarNumeros(validar) == true) {
             evt.consume();
+            
+            JOptionPane.showMessageDialog(rootPane, "Revise los datos ingresados","Alerta",JOptionPane.ERROR_MESSAGE);
         }
 
 
