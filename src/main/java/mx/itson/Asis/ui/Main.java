@@ -128,7 +128,7 @@ public class Main extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setText("CURP");
 
-        jButton1.setText("Aceptar");
+        jButton1.setText("Generar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -211,9 +211,9 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbxEntidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtApellido2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(26, 26, 26)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -273,7 +273,7 @@ public class Main extends javax.swing.JFrame {
 
             lblResultado.setText(concatenar);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Revise los datos ingresados","Alerta",JOptionPane.ERROR_MESSAGE);
+            lblResultado.setText("Revise los datos proporcionados");
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -283,7 +283,8 @@ public class Main extends javax.swing.JFrame {
         Operacion operacion = new Operacion();
         if (operacion.validarLetras(validar) == true) {
             evt.consume();
-            JOptionPane.showMessageDialog(rootPane, "Revise los datos ingresados","Alerta",JOptionPane.ERROR_MESSAGE);
+
+            lblResultado.setText("Ingrese solo carácteres numericos");
         }
         if (txtAno.getText().length() >= 4) {
             evt.consume();
@@ -295,7 +296,8 @@ public class Main extends javax.swing.JFrame {
         Operacion operacion = new Operacion();
         if (operacion.validarLetras(validar) == true) {
             evt.consume();
-            JOptionPane.showMessageDialog(rootPane, "Revise los datos ingresados","Alerta",JOptionPane.ERROR_MESSAGE);
+
+            lblResultado.setText("Ingrese solo carácteres numericos");
         }
         if (txtMes.getText().length() >= 2) {
             evt.consume();
@@ -309,7 +311,8 @@ public class Main extends javax.swing.JFrame {
         if (operacion.validarLetras(validar) == true) {
             evt.consume();
             
-            JOptionPane.showMessageDialog(rootPane, "Revise los datos ingresados","Alerta",JOptionPane.ERROR_MESSAGE);
+
+            lblResultado.setText("Ingrese solo carácteres numericos");
         }
         if (txtDia.getText().length() >= 2) {
             evt.consume();
@@ -323,7 +326,8 @@ public class Main extends javax.swing.JFrame {
         if (operacion.validarNumeros(validar) == true) {
             evt.consume();
             
-            JOptionPane.showMessageDialog(rootPane, "Revise los datos ingresados","Alerta",JOptionPane.ERROR_MESSAGE);
+
+            lblResultado.setText("Ingrese solo nombres");
         }
 
 
@@ -335,7 +339,8 @@ public class Main extends javax.swing.JFrame {
         if (operacion.validarNumeros(validar) == true) {
             evt.consume();
             
-            JOptionPane.showMessageDialog(rootPane, "Revise los datos ingresados","Alerta",JOptionPane.ERROR_MESSAGE);
+
+            lblResultado.setText("Ingrese solo apellidos");
         }
 
 
@@ -347,7 +352,8 @@ public class Main extends javax.swing.JFrame {
         if (operacion.validarNumeros(validar) == true) {
             evt.consume();
             
-            JOptionPane.showMessageDialog(rootPane, "Revise los datos ingresados","Alerta",JOptionPane.ERROR_MESSAGE);
+
+            lblResultado.setText("Ingrese solo apellidos");
         }
 
 
