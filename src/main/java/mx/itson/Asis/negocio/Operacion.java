@@ -38,8 +38,13 @@ public class Operacion {
      * @return String procesada mediante los elemtentos que componen la CURP
      */
     public String segundoApellido(String segundoApellido) {
-
-        String segundoApellido1 = segundoApellido.toLowerCase().substring(0, 1);
+        String segundoApellido1 = "";
+        if (!segundoApellido.isEmpty()) {
+             segundoApellido1 = segundoApellido.toLowerCase().substring(0, 1);
+        }else if (segundoApellido.isEmpty()){
+            segundoApellido1 = "X";
+        }
+        
 
         return segundoApellido1;
     }
@@ -54,12 +59,19 @@ public class Operacion {
      */
     public String nombre(String nombre) {
  
-        String nombreDos= nombre.toLowerCase().replace("á","a").replace("é", "e").replace("í", "i").replace("ó","o").replace("ú","u");
+        String nombreDos = nombre.toLowerCase()
+                .replace("á","a")
+                .replace("é", "e")
+                .replace("í", "i")
+                .replace("ó","o")
+                .replace("ú","u");
         String nombreFinal = "";
         if (nombre.contains(" ")) {
             String[] nombreSplit = nombreDos.split(" ");
-            if (nombreSplit[0].equals("jose") || nombreSplit[0].equals("maria")) {
+            if (nombreSplit[0].equals("jose") || nombreSplit[0].equals("maria")|nombreSplit[1].equals("jose") || nombreSplit[1].equals("maria")) {
             nombreFinal = nombreSplit[1].substring(0,1);
+            }else{
+            nombreFinal = nombreSplit[0].substring(0,1);
             }
 
         } else {
@@ -212,17 +224,27 @@ public class Operacion {
     }
 
     public String consonantePrimera(String consonantePrimera) {
-
-        String consonantePrimera2 = consonantePrimera.toLowerCase().replaceAll("[aeiou]", "").substring(1, 2);
+        String consonantePrimera2 = "";
+        consonantePrimera = consonantePrimera.toLowerCase();
+        if (consonantePrimera.startsWith("a") | consonantePrimera.startsWith("e") | consonantePrimera.startsWith("i")|consonantePrimera.startsWith("o") | consonantePrimera.startsWith("u")) {
+            consonantePrimera2 = consonantePrimera.toLowerCase().replaceAll("[aeiou]", "").substring(0, 1);
+        } else if (consonantePrimera.isEmpty()){
+             consonantePrimera2 = "X";
+        }else {
+        consonantePrimera2 = consonantePrimera.toLowerCase().replaceAll("[aeiou]", "").substring(1, 2);
+        }
         return consonantePrimera2;
     }
 
     public String consonanteSegunda(String consonanteSegunda) {
         String consonanteSegunda2 = "";
-        if (consonanteSegunda.isEmpty()) {
-            consonanteSegunda2 = "X";
-        } else {
-            consonanteSegunda2 = consonanteSegunda.toLowerCase().replaceAll("[aeiou]", "").substring(1, 2); //error
+        consonanteSegunda = consonanteSegunda.toLowerCase();
+        if (consonanteSegunda.startsWith("a") | consonanteSegunda.startsWith("e") | consonanteSegunda.startsWith("i")|consonanteSegunda.startsWith("o") | consonanteSegunda.startsWith("u")) {
+            consonanteSegunda2 = consonanteSegunda.toLowerCase().replaceAll("[aeiou]", "").substring(0, 1);
+        } else if (consonanteSegunda.isEmpty()){
+             consonanteSegunda2 = "X";
+        }else {
+        consonanteSegunda2 = consonanteSegunda.toLowerCase().replaceAll("[aeiou]", "").substring(1, 2);
         }
 
         return consonanteSegunda2;
@@ -230,24 +252,20 @@ public class Operacion {
 
     public String consonanteInterna(String consonanteInterna) {
         String consonanteInterna2 = "";
-        String[] vocal = {"A","E", "I","O" ,"U" ,"a", "e", "i", "o","u"};
         
-        if (true) {
-            for (int i = 0; i < vocal.length; i++) {
-              if (!consonanteInterna.startsWith(vocal[i])) {  
-                 consonanteInterna2 = consonanteInterna.toLowerCase().replaceAll("[aeiou]", "").substring(1, 2); 
+        
+        
+        consonanteInterna = consonanteInterna.toLowerCase();
+            if (consonanteInterna.startsWith("a") | consonanteInterna.startsWith("e") | consonanteInterna.startsWith("i")|consonanteInterna.startsWith("o") | consonanteInterna.startsWith("u")) {  
+                 consonanteInterna2 = consonanteInterna.toLowerCase().replaceAll("[aeiou]", "").substring(0, 1); 
                   
             }else{
-              consonanteInterna2 = consonanteInterna.toLowerCase().replaceAll("[aeiou]", "").substring(0, 1);
+              consonanteInterna2 = consonanteInterna.toLowerCase().replaceAll("[aeiou]", "").substring(1, 2);
               }
-              
-            }
+       
         
-            
-        }else{
         
-        consonanteInterna2 = consonanteInterna.toLowerCase().replaceAll("[aeiou]", "").substring(0, 1);
-        }
+        
         
 
         return consonanteInterna2;
