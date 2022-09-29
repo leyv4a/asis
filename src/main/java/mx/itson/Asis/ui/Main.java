@@ -104,6 +104,18 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        txtApellido1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellido1KeyTyped(evt);
+            }
+        });
+
+        txtApellido2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtApellido2KeyTyped(evt);
+            }
+        });
+
         jLabel8.setText("Apellido Paterno");
 
         jLabel9.setText("Apellido Materno");
@@ -263,27 +275,61 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtAnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnoKeyTyped
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') {
+            evt.consume();
+        }
         if (txtAno.getText().length() >= 4) {
             evt.consume();
         }
     }//GEN-LAST:event_txtAnoKeyTyped
 
     private void txtMesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMesKeyTyped
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') {
+            evt.consume();
+        }
         if (txtMes.getText().length() >= 2) {
             evt.consume();
         }
+         
     }//GEN-LAST:event_txtMesKeyTyped
 
     private void txtDiaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiaKeyTyped
+        char c = evt.getKeyChar();
+        if (c<'0' || c>'9') {
+            evt.consume();
+        }
         if (txtDia.getText().length() >= 2) {
             evt.consume();
         }
+        
     }//GEN-LAST:event_txtDiaKeyTyped
 
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
-
+        char c = evt.getKeyChar();
+        
+        if ((c<'a' || c >'z') || (c<'A' || c >'Z') ) {
+            evt.consume();
+        }
 
     }//GEN-LAST:event_txtNombreKeyTyped
+
+    private void txtApellido1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellido1KeyTyped
+        char c = evt.getKeyChar();
+        
+        if ((c<'a' || c >'z') || (c<'A' || c >'Z') ) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtApellido1KeyTyped
+
+    private void txtApellido2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellido2KeyTyped
+        char c = evt.getKeyChar();
+        
+        if ((c<'a' || c >'z') || (c<'A' || c >'Z') ) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtApellido2KeyTyped
 
     /**
      * @param args the command line arguments
