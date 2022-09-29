@@ -264,10 +264,13 @@ public class Main extends javax.swing.JFrame {
 
             String valorUno = operacion.agregarValorUno();
 
-            lblResultado.setText(primerApellido2.concat(segundoApellido2)
-                    .concat(nombre2).concat(ano2).concat(mes).concat(dia)
-                    .concat(genero2).concat(entidadFederativa2).concat(consonantePrimera).
-                    concat(consonanteSegunda).concat(consonanteInterna).concat(fechaNacimiento).concat(valorUno).toUpperCase());
+            String concatenar = primerApellido2.concat(segundoApellido2).concat(nombre2)
+                    .concat(ano2).concat(mes).concat(dia)
+                    .concat(genero2).concat(entidadFederativa2)
+                    .concat(consonantePrimera).concat(consonanteSegunda).concat(consonanteInterna)
+                    .concat(fechaNacimiento).concat(valorUno).toUpperCase();
+
+            lblResultado.setText(concatenar);
         } catch (Exception e) {
             lblResultado.setText("REVISE LOS DATOS PROPORCIONADOS");
         }
