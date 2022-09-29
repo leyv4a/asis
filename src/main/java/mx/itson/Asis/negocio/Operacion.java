@@ -16,7 +16,7 @@ public class Operacion {
      * Este metodo recibira el String con el primer apellido y retornara los
      * caracteres para componer la CURP
      *
-     * @param String que se procesara mediante los elementos que componen la
+     * @param primerApellido  que se procesara mediante los elementos que componen la
      * CURP
      * @return String procesada mediante los elemtentos que componen la CURP
      */
