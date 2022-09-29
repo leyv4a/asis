@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package mx.itson.Asis.negocio;
+
 import mx.itson.Asis.ui.Main;
+
 /**
  * Contiene metodos para generar la CURP de un ciudadano
  *
@@ -11,16 +13,16 @@ import mx.itson.Asis.ui.Main;
  *
  */
 public class Operacion {
-   
+
     /**
      * Este metodo recibira el String con el primer apellido y retornara los
      * caracteres para componer la CURP
      *
-     * @param primerApellido  que se procesara mediante los elementos que componen la
-     * CURP
+     * @param primerApellido que se procesara mediante los elementos que
+     * componen la CURP
      * @return String procesada mediante los elementos que componen la CURP
      */
-    public String primerApellido(String primerApellido) {
+    public String agregarPrimerApellido(String primerApellido) {
 
         String apellidoTrim = primerApellido.toLowerCase().substring(0, 1);
         String apellidoTrim2 = primerApellido.toLowerCase().replaceAll("[qwrtypsdfghjklñmnbvcxz]", "").substring(0, 1);
@@ -33,18 +35,17 @@ public class Operacion {
      * Este metodo recibira el String con el segundo apellido y retornara los
      * caracteres para componer la CURP
      *
-     * @param String que se procesara mediante los elementos que componen la
-     * CURP
-     * @return String procesada mediante los elementoselementos que componen la CURP
+     * @param segundoApellido que se procesara mediante los elementos que
+     * componen la CURP
+     * @return String procesada mediante los elementos que componen la CURP
      */
-    public String segundoApellido(String segundoApellido) {
+    public String agregarSegundoApellido(String segundoApellido) {
         String segundoApellido1 = "";
         if (!segundoApellido.isEmpty()) {
-             segundoApellido1 = segundoApellido.toLowerCase().substring(0, 1);
-        }else if (segundoApellido.isEmpty()){
+            segundoApellido1 = segundoApellido.toLowerCase().substring(0, 1);
+        } else if (segundoApellido.isEmpty()) {
             segundoApellido1 = "X";
         }
-        
 
         return segundoApellido1;
     }
@@ -53,25 +54,25 @@ public class Operacion {
      * Este metodo recibira el String con el nombre y retornara los caracteres
      * para componer la CURP
      *
-     * @param String que se procesara mediante los elementos que componen la
+     * @param nombre que se procesara mediante los elementos que componen la
      * CURP
      * @return String procesada mediante los elementos que componen la CURP
      */
-    public String nombre(String nombre) {
- 
+    public String agregarNombre(String nombre) {
+
         String nombreDos = nombre.toLowerCase()
-                .replace("á","a")
+                .replace("á", "a")
                 .replace("é", "e")
                 .replace("í", "i")
-                .replace("ó","o")
-                .replace("ú","u");
+                .replace("ó", "o")
+                .replace("ú", "u");
         String nombreFinal = "";
         if (nombre.contains(" ")) {
             String[] nombreSplit = nombreDos.split(" ");
-            if (nombreSplit[0].equals("jose") || nombreSplit[0].equals("maria")|nombreSplit[1].equals("jose") || nombreSplit[1].equals("maria")) {
-            nombreFinal = nombreSplit[1].substring(0,1);
-            }else{
-            nombreFinal = nombreSplit[0].substring(0,1);
+            if (nombreSplit[0].equals("jose") || nombreSplit[0].equals("maria") | nombreSplit[1].equals("jose") || nombreSplit[1].equals("maria")) {
+                nombreFinal = nombreSplit[1].substring(0, 1);
+            } else {
+                nombreFinal = nombreSplit[0].substring(0, 1);
             }
 
         } else {
@@ -85,11 +86,10 @@ public class Operacion {
      * Este metodo recibira el String con el año y retornara los caracteres para
      * componer la CURP
      *
-     * @param ano que se procesara mediante los elementos que componen la
-     * CURP
+     * @param ano que se procesara mediante los elementos que componen la CURP
      * @return String procesada mediante los elementos que componen la CURP
      */
-    public String ano(String ano) {
+    public String agregarAno(String ano) {
         String ano2 = ano.substring(2, 4);
 
         return ano2;
@@ -103,7 +103,7 @@ public class Operacion {
      * CURP
      * @return String procesada mediante los elementos que componen la CURP
      */
-    public String genero(String genero) {
+    public String agregarGenero(String genero) {
         String genero2 = "";
         if (genero.equals("Masculino")) {
             genero2 = "h";
@@ -112,15 +112,16 @@ public class Operacion {
         }
         return genero2;
     }
+
     /**
-     * Este metodo recibira el String con el año y retornara los caracteres para
-     * componer la CURP
+     * Este metodo recibira el String con la entidad federativa y retornara los
+     * caracteres para componer la CURP
      *
-     * @param entidadFederativa  que se procesara mediante los elementos que componen la
-     * CURP
+     * @param entidadFederativa que se procesara mediante los elementos que
+     * componen la CURP
      * @return String procesada mediante los elementos que componen la CURP
      */
-    public String entidadFederativa(String entidadFederativa) {
+    public String agregarEntidadFederativa(String entidadFederativa) {
         String entidadFederativa2 = new String();
 
         switch (entidadFederativa) {
@@ -229,78 +230,82 @@ public class Operacion {
         }
         return entidadFederativa2;
     }
+
     /**
-     * Este seleccionará la primer consonante del primero apellido (No inicial) y retornara los caracteres para
-     * componer la CURP
+     * Este seleccionará la primer consonante del primero apellido (No inicial)
+     * y retornara los caracteres para componer la CURP
      *
-     * @param consonantePrimera  que se procesara mediante los elementos que componen la
-     * CURP
+     * @param consonantePrimera que se procesara mediante los elementos que
+     * componen la CURP
      * @return String procesada mediante los elementos que componen la CURP
      */
-    public String consonantePrimera(String consonantePrimera) {
+    public String agregarPrimeraConsonante(String consonantePrimera) {
         String consonantePrimera2 = "";
         consonantePrimera = consonantePrimera.toLowerCase();
-        if (consonantePrimera.startsWith("a") | consonantePrimera.startsWith("e") | consonantePrimera.startsWith("i")|consonantePrimera.startsWith("o") | consonantePrimera.startsWith("u")) {
+        if (consonantePrimera.startsWith("a") | consonantePrimera.startsWith("e") | consonantePrimera.startsWith("i") | consonantePrimera.startsWith("o") | consonantePrimera.startsWith("u")) {
             consonantePrimera2 = consonantePrimera.toLowerCase().replaceAll("[aeiou]", "").substring(0, 1);
-        } else if (consonantePrimera.isEmpty()){
-             consonantePrimera2 = "X";
-        }else {
-        consonantePrimera2 = consonantePrimera.toLowerCase().replaceAll("[aeiou]", "").substring(1, 2);
+        } else if (consonantePrimera.isEmpty()) {
+            consonantePrimera2 = "X";
+        } else {
+            consonantePrimera2 = consonantePrimera.toLowerCase().replaceAll("[aeiou]", "").substring(1, 2);
         }
         return consonantePrimera2;
     }
+
     /**
-     * Este seleccionará la primer consonante del segundo apellido (No inicial) y retornara los caracteres para
-     * componer la CURP
+     * Este seleccionará la primer consonante del segundo apellido (No inicial)
+     * y retornara los caracteres para componer la CURP
      *
-     * @param consonanteSegunda  que se procesara mediante los elementos que componen la
-     * CURP
+     * @param consonanteSegunda que se procesara mediante los elementos que
+     * componen la CURP
      * @return String procesada mediante los elementos que componen la CURP
      */
-    public String consonanteSegunda(String consonanteSegunda) {
+    public String agregarSegundaConsonante(String consonanteSegunda) {
         String consonanteSegunda2 = "";
         consonanteSegunda = consonanteSegunda.toLowerCase();
-        if (consonanteSegunda.startsWith("a") | consonanteSegunda.startsWith("e") | consonanteSegunda.startsWith("i")|consonanteSegunda.startsWith("o") | consonanteSegunda.startsWith("u")) {
+        if (consonanteSegunda.startsWith("a") | consonanteSegunda.startsWith("e") | consonanteSegunda.startsWith("i") | consonanteSegunda.startsWith("o") | consonanteSegunda.startsWith("u")) {
             consonanteSegunda2 = consonanteSegunda.toLowerCase().replaceAll("[aeiou]", "").substring(0, 1);
-        } else if (consonanteSegunda.isEmpty()){
-             consonanteSegunda2 = "X";
-        }else {
-        consonanteSegunda2 = consonanteSegunda.toLowerCase().replaceAll("[aeiou]", "").substring(1, 2);
+        } else if (consonanteSegunda.isEmpty()) {
+            consonanteSegunda2 = "X";
+        } else {
+            consonanteSegunda2 = consonanteSegunda.toLowerCase().replaceAll("[aeiou]", "").substring(1, 2);
         }
 
         return consonanteSegunda2;
     }
-/**
-     * Este seleccionará la consonante interna (No inicial) del primer apellido y retornara los caracteres para
-     * componer la CURP
+
+    /**
+     * Este seleccionará la consonante interna (No inicial) del primer apellido
+     * y retornara los caracteres para componer la CURP
      *
-     * @param consonanteInterna  que se procesara mediante los elementos que componen la
-     * CURP
+     * @param consonanteInterna que se procesara mediante los elementos que
+     * componen la CURP
      * @return String procesada mediante los elementos que componen la CURP
      */
-    public String consonanteInterna(String consonanteInterna) {
+    public String agregarConsonanteInterna(String consonanteInterna) {
         String consonanteInterna2 = "";
-        
+
         consonanteInterna = consonanteInterna.toLowerCase();
-            if (consonanteInterna.startsWith("a") | consonanteInterna.startsWith("e") | consonanteInterna.startsWith("i")|consonanteInterna.startsWith("o") | consonanteInterna.startsWith("u")) {  
-                 consonanteInterna2 = consonanteInterna.toLowerCase().replaceAll("[aeiou]", "").substring(0, 1); 
-                  
-            }else{
-              consonanteInterna2 = consonanteInterna.toLowerCase().replaceAll("[aeiou]", "").substring(1, 2);
-              }
+        if (consonanteInterna.startsWith("a") | consonanteInterna.startsWith("e") | consonanteInterna.startsWith("i") | consonanteInterna.startsWith("o") | consonanteInterna.startsWith("u")) {
+            consonanteInterna2 = consonanteInterna.toLowerCase().replaceAll("[aeiou]", "").substring(0, 1);
+
+        } else {
+            consonanteInterna2 = consonanteInterna.toLowerCase().replaceAll("[aeiou]", "").substring(1, 2);
+        }
 
         return consonanteInterna2;
 
     }
-/**
-     * Este metodo validará si se cumple la condicion de haber nacido en el año 1999 y retornara los caracteres para
-     * componer la CURP
+
+    /**
+     * Este metodo validará si se cumple la condicion de haber nacido en el año
+     * 1999 y retornara los caracteres para componer la CURP
      *
-     * @param fechaNacimiento  que se procesara mediante los elementos que componen la
-     * CURP
+     * @param fechaNacimiento que se procesara mediante los elementos que
+     * componen la CURP
      * @return String procesada mediante los elementos que componen la CURP
      */
-    public String fechaNacimiento(String fechaNacimiento) {
+    public String agregarFechaNacimiento(String fechaNacimiento) {
         Double fechaNacimiento2 = Double.parseDouble(fechaNacimiento);
         String fechaNacimiento3 = "";
         if (fechaNacimiento2 >= 2000) {
@@ -311,19 +316,36 @@ public class Operacion {
 
         return fechaNacimiento3;
     }
+
     /**
-     * Este metodo genera el valor "1" y retornara los caracteres para
-     * componer la CURP
+     * Este metodo genera el valor "1" y retornara los caracteres para componer
+     * la CURP
      *
-     * @param valorUno  que se procesara mediante los elementos que componen la
+     * @param valorUno que se procesara mediante los elementos que componen la
      * CURP
      * @return String procesada mediante los elementos que componen la CURP
      */
-    public String valorUno (){
-    String uno = "1";
-    return uno;
+    public String agregarValorUno() {
+        String uno = "1";
+        return uno;
     }
-    
-    
+
+    public boolean validarNumeros(char validar) {
+        if (Character.isDigit(validar)) {
+
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public boolean validarLetras(char validar) {
+        if (Character.isLetter(validar)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 }

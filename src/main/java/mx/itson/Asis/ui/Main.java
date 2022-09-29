@@ -233,36 +233,36 @@ public class Main extends javax.swing.JFrame {
 
             Operacion operacion = new Operacion();
             String primerApellido = txtApellido1.getText();
-            String primerApellido2 = operacion.primerApellido(primerApellido);
+            String primerApellido2 = operacion.agregarPrimerApellido(primerApellido);
 
             String segundoApellido = txtApellido2.getText();
-            String segundoApellido2 = operacion.segundoApellido(segundoApellido);
+            String segundoApellido2 = operacion.agregarSegundoApellido(segundoApellido);
 
             String nombre = txtNombre.getText();
-            String nombre2 = operacion.nombre(nombre);
+            String nombre2 = operacion.agregarNombre(nombre);
 
             String ano = txtAno.getText();
-            String ano2 = operacion.ano(ano);
+            String ano2 = operacion.agregarAno(ano);
 
             String mes = txtMes.getText();
 
             String dia = txtDia.getText();
 
             String genero = cbxSexo.getSelectedItem().toString();
-            String genero2 = operacion.genero(genero);
+            String genero2 = operacion.agregarGenero(genero);
 
             String entidadFederativa = cbxEntidad.getSelectedItem().toString().toUpperCase();
-            String entidadFederativa2 = operacion.entidadFederativa(entidadFederativa);
+            String entidadFederativa2 = operacion.agregarEntidadFederativa(entidadFederativa);
 
-            String consonantePrimera = operacion.consonantePrimera(primerApellido);
+            String consonantePrimera = operacion.agregarPrimeraConsonante(primerApellido);
 
-            String consonanteSegunda = operacion.consonanteSegunda(segundoApellido);
+            String consonanteSegunda = operacion.agregarSegundaConsonante(segundoApellido);
 
-            String consonanteInterna = operacion.consonanteInterna(nombre);
+            String consonanteInterna = operacion.agregarConsonanteInterna(nombre);
 
-            String fechaNacimiento = operacion.fechaNacimiento(ano);
+            String fechaNacimiento = operacion.agregarFechaNacimiento(ano);
 
-            String valorUno = operacion.valorUno();
+            String valorUno = operacion.agregarValorUno();
 
             lblResultado.setText(primerApellido2.concat(segundoApellido2)
                     .concat(nombre2).concat(ano2).concat(mes).concat(dia)
@@ -275,8 +275,9 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtAnoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtAnoKeyTyped
-        char c = evt.getKeyChar();
-        if (c<'0' || c>'9') {
+        char validar = evt.getKeyChar();
+        Operacion operacion = new Operacion();
+        if (operacion.validarLetras(validar) == true) {
             evt.consume();
         }
         if (txtAno.getText().length() >= 4) {
@@ -285,46 +286,57 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_txtAnoKeyTyped
 
     private void txtMesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtMesKeyTyped
-        char c = evt.getKeyChar();
-        if (c<'0' || c>'9') {
+        char validar = evt.getKeyChar();
+        Operacion operacion = new Operacion();
+        if (operacion.validarLetras(validar) == true) {
             evt.consume();
         }
         if (txtMes.getText().length() >= 2) {
             evt.consume();
         }
-         
+
     }//GEN-LAST:event_txtMesKeyTyped
 
     private void txtDiaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiaKeyTyped
-        char c = evt.getKeyChar();
-        if (c<'0' || c>'9')evt.consume(); 
-            
-        
+        char validar = evt.getKeyChar();
+        Operacion operacion = new Operacion();
+        if (operacion.validarLetras(validar) == true) {
+            evt.consume();
+        }
         if (txtDia.getText().length() >= 2) {
             evt.consume();
         }
-        
+
     }//GEN-LAST:event_txtDiaKeyTyped
 
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
-        char c = evt.getKeyChar();
-        
-        if ((c<'a' || c >'z') && (c<'A' || c >'Z') ) evt.consume();
+        char validar = evt.getKeyChar();
+        Operacion operacion = new Operacion();
+        if (operacion.validarNumeros(validar) == true) {
+            evt.consume();
+        }
+
 
     }//GEN-LAST:event_txtNombreKeyTyped
 
     private void txtApellido1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellido1KeyTyped
-        char c = evt.getKeyChar();
-        
-        if ((c<'a' || c >'z') && (c<'A' || c >'Z') ) evt.consume();
+        char validar = evt.getKeyChar();
+        Operacion operacion = new Operacion();
+        if (operacion.validarNumeros(validar) == true) {
+            evt.consume();
+        }
+
+
     }//GEN-LAST:event_txtApellido1KeyTyped
 
     private void txtApellido2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellido2KeyTyped
-        char c = evt.getKeyChar();
-        
-        if ((c<'a' || c >'z') && (c<'A' || c >'Z') ) evt.consume();
-            
-        
+        char validar = evt.getKeyChar();
+        Operacion operacion = new Operacion();
+        if (operacion.validarNumeros(validar) == true) {
+            evt.consume();
+        }
+
+
     }//GEN-LAST:event_txtApellido2KeyTyped
 
     /**
