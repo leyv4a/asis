@@ -297,9 +297,9 @@ public class Main extends javax.swing.JFrame {
 
     private void txtDiaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDiaKeyTyped
         char c = evt.getKeyChar();
-        if (c<'0' || c>'9') {
-            evt.consume();
-        }
+        if (c<'0' || c>'9')evt.consume(); 
+            
+        
         if (txtDia.getText().length() >= 2) {
             evt.consume();
         }
@@ -309,26 +309,22 @@ public class Main extends javax.swing.JFrame {
     private void txtNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombreKeyTyped
         char c = evt.getKeyChar();
         
-        if ((c<'a' || c >'z') || (c<'A' || c >'Z') ) {
-            evt.consume();
-        }
+        if ((c<'a' || c >'z') && (c<'A' || c >'Z') ) evt.consume();
 
     }//GEN-LAST:event_txtNombreKeyTyped
 
     private void txtApellido1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellido1KeyTyped
         char c = evt.getKeyChar();
         
-        if ((c<'a' || c >'z') || (c<'A' || c >'Z') ) {
-            evt.consume();
-        }
+        if ((c<'a' || c >'z') && (c<'A' || c >'Z') ) evt.consume();
     }//GEN-LAST:event_txtApellido1KeyTyped
 
     private void txtApellido2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtApellido2KeyTyped
         char c = evt.getKeyChar();
         
-        if ((c<'a' || c >'z') || (c<'A' || c >'Z') ) {
-            evt.consume();
-        }
+        if ((c<'a' || c >'z') && (c<'A' || c >'Z') ) evt.consume();
+            
+        
     }//GEN-LAST:event_txtApellido2KeyTyped
 
     /**
