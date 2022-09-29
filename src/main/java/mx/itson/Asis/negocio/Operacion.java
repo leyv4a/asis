@@ -18,7 +18,7 @@ public class Operacion {
      *
      * @param primerApellido  que se procesara mediante los elementos que componen la
      * CURP
-     * @return String procesada mediante los elemtentos que componen la CURP
+     * @return String procesada mediante los elementos que componen la CURP
      */
     public String primerApellido(String primerApellido) {
 
@@ -35,7 +35,7 @@ public class Operacion {
      *
      * @param String que se procesara mediante los elementos que componen la
      * CURP
-     * @return String procesada mediante los elemtentos que componen la CURP
+     * @return String procesada mediante los elementoselementos que componen la CURP
      */
     public String segundoApellido(String segundoApellido) {
         String segundoApellido1 = "";
@@ -55,7 +55,7 @@ public class Operacion {
      *
      * @param String que se procesara mediante los elementos que componen la
      * CURP
-     * @return String procesada mediante los elemtentos que componen la CURP
+     * @return String procesada mediante los elementos que componen la CURP
      */
     public String nombre(String nombre) {
  
@@ -87,7 +87,7 @@ public class Operacion {
      *
      * @param ano que se procesara mediante los elementos que componen la
      * CURP
-     * @return String procesada mediante los elemtentos que componen la CURP
+     * @return String procesada mediante los elementos que componen la CURP
      */
     public String ano(String ano) {
         String ano2 = ano.substring(2, 4);
@@ -101,7 +101,7 @@ public class Operacion {
      *
      * @param genero que se procesara mediante los elementos que componen la
      * CURP
-     * @return String procesada mediante los elemtentos que componen la CURP
+     * @return String procesada mediante los elementos que componen la CURP
      */
     public String genero(String genero) {
         String genero2 = "";
@@ -118,7 +118,7 @@ public class Operacion {
      *
      * @param entidadFederativa  que se procesara mediante los elementos que componen la
      * CURP
-     * @return String procesada mediante los elemtentos que componen la CURP
+     * @return String procesada mediante los elementos que componen la CURP
      */
     public String entidadFederativa(String entidadFederativa) {
         String entidadFederativa2 = new String();
@@ -235,7 +235,7 @@ public class Operacion {
      *
      * @param consonantePrimera  que se procesara mediante los elementos que componen la
      * CURP
-     * @return String procesada mediante los elemtentos que componen la CURP
+     * @return String procesada mediante los elementos que componen la CURP
      */
     public String consonantePrimera(String consonantePrimera) {
         String consonantePrimera2 = "";
@@ -255,7 +255,7 @@ public class Operacion {
      *
      * @param consonanteSegunda  que se procesara mediante los elementos que componen la
      * CURP
-     * @return String procesada mediante los elemtentos que componen la CURP
+     * @return String procesada mediante los elementos que componen la CURP
      */
     public String consonanteSegunda(String consonanteSegunda) {
         String consonanteSegunda2 = "";
@@ -276,7 +276,7 @@ public class Operacion {
      *
      * @param consonanteInterna  que se procesara mediante los elementos que componen la
      * CURP
-     * @return String procesada mediante los elemtentos que componen la CURP
+     * @return String procesada mediante los elementos que componen la CURP
      */
     public String consonanteInterna(String consonanteInterna) {
         String consonanteInterna2 = "";
@@ -298,7 +298,7 @@ public class Operacion {
      *
      * @param fechaNacimiento  que se procesara mediante los elementos que componen la
      * CURP
-     * @return String procesada mediante los elemtentos que componen la CURP
+     * @return String procesada mediante los elementos que componen la CURP
      */
     public String fechaNacimiento(String fechaNacimiento) {
         Double fechaNacimiento2 = Double.parseDouble(fechaNacimiento);
@@ -317,7 +317,7 @@ public class Operacion {
      *
      * @param valorUno  que se procesara mediante los elementos que componen la
      * CURP
-     * @return String procesada mediante los elemtentos que componen la CURP
+     * @return String procesada mediante los elementos que componen la CURP
      */
     public String valorUno (){
     String uno = "1";
