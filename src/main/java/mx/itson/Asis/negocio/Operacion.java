@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package mx.itson.Asis.negocio;
-
+import mx.itson.Asis.ui.Main;
 /**
  * Contiene metodos para generar la CURP de un ciudadano
  *
@@ -11,7 +11,7 @@ package mx.itson.Asis.negocio;
  *
  */
 public class Operacion {
-
+   
     /**
      * Este metodo recibira el String con el primer apellido y retornara los
      * caracteres para componer la CURP
@@ -85,7 +85,7 @@ public class Operacion {
      * Este metodo recibira el String con el año y retornara los caracteres para
      * componer la CURP
      *
-     * @param String que se procesara mediante los elementos que componen la
+     * @param ano que se procesara mediante los elementos que componen la
      * CURP
      * @return String procesada mediante los elemtentos que componen la CURP
      */
@@ -99,7 +99,7 @@ public class Operacion {
      * Este metodo recibira el String con el genero y retornara los caracteres
      * para componer la CURP
      *
-     * @param String que se procesara mediante los elementos que componen la
+     * @param genero que se procesara mediante los elementos que componen la
      * CURP
      * @return String procesada mediante los elemtentos que componen la CURP
      */
@@ -112,7 +112,14 @@ public class Operacion {
         }
         return genero2;
     }
-
+    /**
+     * Este metodo recibira el String con el año y retornara los caracteres para
+     * componer la CURP
+     *
+     * @param entidadFederativa  que se procesara mediante los elementos que componen la
+     * CURP
+     * @return String procesada mediante los elemtentos que componen la CURP
+     */
     public String entidadFederativa(String entidadFederativa) {
         String entidadFederativa2 = new String();
 
@@ -222,7 +229,14 @@ public class Operacion {
         }
         return entidadFederativa2;
     }
-
+    /**
+     * Este seleccionará la primer consonante del primero apellido (No inicial) y retornara los caracteres para
+     * componer la CURP
+     *
+     * @param consonantePrimera  que se procesara mediante los elementos que componen la
+     * CURP
+     * @return String procesada mediante los elemtentos que componen la CURP
+     */
     public String consonantePrimera(String consonantePrimera) {
         String consonantePrimera2 = "";
         consonantePrimera = consonantePrimera.toLowerCase();
@@ -235,7 +249,14 @@ public class Operacion {
         }
         return consonantePrimera2;
     }
-
+    /**
+     * Este seleccionará la primer consonante del segundo apellido (No inicial) y retornara los caracteres para
+     * componer la CURP
+     *
+     * @param consonanteSegunda  que se procesara mediante los elementos que componen la
+     * CURP
+     * @return String procesada mediante los elemtentos que componen la CURP
+     */
     public String consonanteSegunda(String consonanteSegunda) {
         String consonanteSegunda2 = "";
         consonanteSegunda = consonanteSegunda.toLowerCase();
@@ -249,11 +270,16 @@ public class Operacion {
 
         return consonanteSegunda2;
     }
-
+/**
+     * Este seleccionará la consonante interna (No inicial) del primer apellido y retornara los caracteres para
+     * componer la CURP
+     *
+     * @param consonanteInterna  que se procesara mediante los elementos que componen la
+     * CURP
+     * @return String procesada mediante los elemtentos que componen la CURP
+     */
     public String consonanteInterna(String consonanteInterna) {
         String consonanteInterna2 = "";
-        
-        
         
         consonanteInterna = consonanteInterna.toLowerCase();
             if (consonanteInterna.startsWith("a") | consonanteInterna.startsWith("e") | consonanteInterna.startsWith("i")|consonanteInterna.startsWith("o") | consonanteInterna.startsWith("u")) {  
@@ -262,16 +288,18 @@ public class Operacion {
             }else{
               consonanteInterna2 = consonanteInterna.toLowerCase().replaceAll("[aeiou]", "").substring(1, 2);
               }
-       
-        
-        
-        
-        
 
         return consonanteInterna2;
 
     }
-
+/**
+     * Este metodo validará si se cumple la condicion de haber nacido en el año 1999 y retornara los caracteres para
+     * componer la CURP
+     *
+     * @param fechaNacimiento  que se procesara mediante los elementos que componen la
+     * CURP
+     * @return String procesada mediante los elemtentos que componen la CURP
+     */
     public String fechaNacimiento(String fechaNacimiento) {
         Double fechaNacimiento2 = Double.parseDouble(fechaNacimiento);
         String fechaNacimiento3 = "";
@@ -283,10 +311,19 @@ public class Operacion {
 
         return fechaNacimiento3;
     }
-    public String valorUno (){
+    /**
+     * Este metodo genera el valor "1" y retornara los caracteres para
+     * componer la CURP
+     *
+     * @param valorUno  que se procesara mediante los elementos que componen la
+     * CURP
+     * @return String procesada mediante los elemtentos que componen la CURP
+     */
+    public String valorUno (String valorUno){
     String uno = "1";
     return uno;
     }
+    
     
 
 }
