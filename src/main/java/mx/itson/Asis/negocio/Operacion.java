@@ -319,7 +319,7 @@ public class Operacion {
      * CURP
      * @return String procesada mediante los elemtentos que componen la CURP
      */
-    public String valorUno (String valorUno){
+    public String valorUno (){
     String uno = "1";
     return uno;
     }
